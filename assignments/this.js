@@ -14,6 +14,7 @@
 // code example for Window Binding
 
 console.log(this);
+// this will console log the global object
 
 // Principle 2
 
@@ -34,7 +35,39 @@ const human = {
 
 //code example for New Binding
 
+unction Humanoid (HumanProperties) {
+    this.team = HumanProperties.team;
+    this.weapons = HumanProperties.weapons;
+    this.language = HumanProperties.language;
+    CharacterStats.call(this, HumanProperties);
+  
+  
+  Humanoid.prototype.greet = function() {
+      return`${this.name} offers a greeting in ${this.language}.`;
+    }
+  };
 
+const swordsman = new Humanoid({
+    createdAt: new Date(),
+    dimensions: {
+      length: 2,
+      width: 2,
+      height: 2,
+    },
+    healthPoints: 15,
+    name: 'Sir Mustachio',
+    team: 'The Round Table',
+    weapons: [
+      'Giant Sword',
+      'Shield',
+    ],
+    language: 'Common Tongue',
+  });
+
+console.log(swordsman.weapons);
+
+ //In this example taken from prototypes.js, a new object was created as a swordsman. 
+ //The "this" in the constructor refers to the newly created swordsman humanoid. 
 
 // Principle 4
 
@@ -57,3 +90,9 @@ function GameObject(properties) {
       return`${this.name} took damage.`;
     }
   };
+
+  console.log(CharacterStats.dimensions);
+
+  //In this example taken from prototypes.js, line 71 attaches the properties from
+  //GameObject
+  
