@@ -20,11 +20,11 @@ function GameObject(properties) {
   this.createdAt = properties.createdAt;
   this.name = properties.name;
   this.dimensions = properties.dimensions;
-}
 
     GameObject.prototype.destroy = function() {
     return`${this.name} was removed from the game.`;
-  };
+  }
+};
 
 
 /*
@@ -36,10 +36,11 @@ function GameObject(properties) {
 function CharacterStats(statProperties) {
   this.healthPoints = statProperties.healthPoints;
   GameObject.call(this, statProperties);
-}
+
     CharacterStats.prototype.takeDamage = function() {
     return`${this.name} took damage.`;
-  };
+  }
+};
 
   
 /*
@@ -57,11 +58,12 @@ function Humanoid (HumanProperties) {
   this.weapons = HumanProperties.weapons;
   this.language = HumanProperties.language;
   CharacterStats.call(this, HumanProperties);
-}
+
 
 Humanoid.prototype.greet = function() {
     return`${this.name} offers a greeting in ${this.language}.`;
-  };
+  }
+};
 
 
 /*
@@ -134,8 +136,8 @@ Humanoid.prototype = Object.create(CharacterStats.prototype);
   console.log(swordsman.team); // The Round Table
   console.log(mage.weapons); // Staff of Shamalama
   console.log(archer.language); // Elvish
-  //console.log(archer.greet()); // Lilith offers a greeting in Elvish.
-  //console.log(mage.takeDamage()); // Bruce took damage.
+  console.log(archer.greet()); // Lilith offers a greeting in Elvish.
+  console.log(mage.takeDamage()); // Bruce took damage.
   console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
 
 
