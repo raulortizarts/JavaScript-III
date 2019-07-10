@@ -145,3 +145,36 @@ Humanoid.prototype = Object.create(CharacterStats.prototype);
   // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
   // * Create two new objects, one a villain and one a hero and fight it out with methods!
+
+  const heroOfTime = new Humanoid({
+    createdAt: new Date(),
+    dimensions: {
+      length: 1,
+      width: 2,
+      height: 4,
+    },
+    healthPoints: 10,
+    name: 'Link',
+    team: 'Kokiri',
+    weapons: [
+      'Master Sword',
+      'Ocarina of Time',
+    ],
+    language: 'Hylian',
+  });
+
+  const darkPrince = new Humanoid({
+    createdAt: new Date(),
+    dimensions: {
+      length: 1,
+      width: 2,
+      height: 4,
+    },
+    healthPoints: 10,
+    name: 'Ganondorf',
+    team: 'Gerudo',
+    weapons: [
+      'Magic',
+    ],
+    language: 'Hylian',
+  });
